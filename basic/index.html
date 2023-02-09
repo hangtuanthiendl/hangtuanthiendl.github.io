@@ -295,12 +295,23 @@
                                     <h3 class="title"><a
                                             href="https://wrapbootstrap.com/theme/tempo-designed-for-startups-WB07364T3?ref=3wm"
                                             target="_blank">Vietnamese - Named-entity recognition</a></h3>
-                                    <p><b>Work with:</b> Scylla · Extract, Transform, Load (ETL) · PostgreSQL · Jenkins
-                                        · Natural Language
-                                        Processing (NLP) · Wireless Sensor Networks · Object-Oriented Programming (OOP)
-                                        · Go (Programming
-                                        Language) · C (Programming Language) · Python (Programming Language)</p>
-                                    <p><b>Team size:</b> 10 </p>
+                                    <p>The goal of this project is to build a tokenizer system that can crawl Vietnamese
+                                        data from the internet and process
+                                        them as a vocabulary dictionary.</p>
+                                    <p><b>Work with:</b></p>
+                                    <p>- Using python to crawl the data in Wikipedia, Vietnamese papers, dictionaries,
+                                        etc. These raw data then store in text
+                                        format.</p>
+                                    <p>- Using Golang to implement a correction UTF8 for the above raw data, load them
+                                        back
+                                        into Scylla Database.</p>
+                                    <p>- Using Rust to implement the Word Piece algorithm which can split the data into
+                                        only one JSON vocabulary file including
+                                        the smallest words.</p>
+                                    <p>- Using Python to implement the Word Piece algorithm which can use the JSON
+                                        vocabulary file to token the sentences into
+                                        vectors.</p>
+                                    <p><b>Team size:</b> 2 </p>
                                     <p><b>Role:</b> Data Engineer</p>
                                 </div><!--//desc-->
                             </div><!--//item-->
@@ -345,13 +356,14 @@
                                         a long address
                                         into 4 levels DISTRICT, PROVINCE, WARD,
                                         and ADDRESS for locate location process.</p>
-                                    <p>- Capture data from profile service and billing service, store it back to Scylla
-                                        (Cassandra) for retrain task.</p>
+                                    <p>- Capturing data from profile service and billing service, then using pyspark to
+                                        store changed data back to Scylla
+                                        (Cassandra) used for retrain task.</p>
                                     <p>- Using Flask Framework (Python) to provide a label tool that can help the
                                         evaluation and correction model</p>
                                     <p>- Using Flask and Swagger to write a wrapper for serving model in production</p>
                                     <p><b>Tech Stack:</b> Golang(Mux Framework), Python, Transformer, Hazelcast,
-                                        PostgreSQL, Scylla Database, Websocket, HTTP2 </p>
+                                        PostgreSQL, Scylla Database - Ring Architure, Websocket, HTTP2, Kafka </p>
                                     <p><b>Team size:</b> 5 </p>
                                     <p><b>Role:</b> Data Engineer</p>
                                 </div><!--//desc-->
@@ -395,7 +407,7 @@
                                         (running
                                         Linux core) by Python services and MQTT
                                         protocol.</p>
-                                    <p>- Using Apache Nifi to sync the data on offline devices.</p>
+                                    <p>- Using Apache Nifi,miNifi to sync the data on offline devices.</p>
                                     <p>- Using NodeJS (Express JS, Jest JS) for almost backend services such as profile
                                         service, and IoT service.</p>
                                     <p>- Storing customer profiles including personal information and device information
@@ -438,7 +450,7 @@
                                     <p>- Using Golang as the main programing language to manage the status of
                                         transactions in the Payment service.</p>
                                     <p>- Using CQRS Pattern to manage the read/write transaction process.</p>
-                                    <p>- Using IPN Pattern to manage the payment process from other partners such
+                                    <p>- Using IPN to manage the payment process from other partners such
                                         as OnePay, Momo, ZaloPay</p>
                                     <p>- Using Google Cloud Platform for deployment process</p>
                                     <p><b>Team size:</b> 4 </p>
