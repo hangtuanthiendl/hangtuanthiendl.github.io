@@ -175,12 +175,14 @@
                                         Fault Prediction in Wireless Sensor Networks Testing Process
                                     </h5>
                                     <p><b> Key Contributions: </b></p>
-                                    <p>- Simulate abnormal data (noise, temperature, weather, etc) which can have affection
-                                    for 3
+                                    <p>- Simulate abnormal data (noise, temperature, weather, etc) which can have
+                                        affection
+                                        for 3
                                         types of sensors: Thermal Sensor, PM
                                         Sensor, Humidity Sensor</p>
                                     <p>- Collect the metric from both simulator and physical devices</p>
-                                    <p>- Apply deviation algorithm to validate the abnormal data collected from a group of sensors 
+                                    <p>- Apply deviation algorithm to validate the abnormal data collected from a group
+                                        of sensors
                                         at the gateway before transfer to backend services.</p>
                                     <p>
                                         - Standardise raw data for the Experiment Model
@@ -266,12 +268,12 @@
                                     deployment and testing for
                                     ML/AI models.
                                     <p><b>What I did:</b></p>
-                                    <p>- Using Flask Framework (Python) to write a wrapper that can help with model
+                                    <p>- Use Flask Framework (Python) to write a wrapper that can help with model
                                         deployment processes.</p>
-                                    <p>- Using Mux Framework (Golang) to write a batch gateway that can hold many
+                                    <p>- Use Mux Framework (Golang) to write a batch gateway that can hold many
                                         requests
                                         from backend services.</p>
-                                    <p>- Using HTTP2 (GRCP) to communicate between internal Golang service and Python
+                                    <p>- Use HTTP2 (GRCP) to communicate between internal Golang service and Python
                                         Service.</p>
                                     <p><b>Tech Stack:</b> Docker, Kubernatives, Google Cloud, Golang ,
                                         Python, Pubsub Emulator, Redis, HTTP2.0 (GRPC Protocol),
@@ -290,15 +292,15 @@
                                         data from the internet and process
                                         them as a vocabulary dictionary.</p>
                                     <p><b>What I did:</b></p>
-                                    <p>- Using Python to crawl the data in Wikipedia, Vietnamese papers, dictionaries,
+                                    <p>- Use Python to crawl the data in Wikipedia, Vietnamese papers, dictionaries,
                                         etc. These raw data then will be stored in text
                                         format.</p>
-                                    <p>- Using Golang to implement a correction UTF8 for the above raw data and load them
+                                    <p>- Use Golang to implement a correction UTF8 for the above raw data and load them
                                         back
                                         into Scylla Database.</p>
-                                    <p>- Using Rust to implement the Word Piece algorithm which can break a sentence into
+                                    <p>- Use Rust to implement the Word Piece algorithm which can break a sentence into
                                         small words which will be stored in a JSON vocabulary file.</p>
-                                    <p>- Using Python to implement the Word Piece algorithm which can use a JSON
+                                    <p>- Use Python to implement the Word Piece algorithm which can use a JSON
                                         vocabulary file to tokenize sentences into
                                         vectors.</p>
                                     <p><b>Team size:</b> 2 </p>
@@ -319,12 +321,12 @@
                                     time and detect abnormal data such as
                                     DDOS attack, Internal Exception (500), Bottle Neck, ...
                                     <p><b>What I did:</b></p>
-                                    <p>- Using Scylla (based on Cassandra Database) and Postgres SQL to store raw logs 
+                                    <p>- Use Scylla (based on Cassandra Database) and Postgres SQL to store raw logs
                                         and processing logs respectively which are
                                         converted into bit numbers.</p>
-                                    <p>- Using PyFlink to extract the data from Kafka, group them as a window,
+                                    <p>- Use PyFlink to extract the data from Kafka, group them as a window,
                                         transform and load them back to Postgres SQL.</p>
-                                    <p>- Using PySpark to detect the abnormal data with LSTM model before loading them
+                                    <p>- Use PySpark to detect the abnormal data with LSTM model before loading them
                                         back to Scylla.</p>
                                     <p> Other tech stack: Faust, Faust Streaming, Websocket, HTTP2</p>
                                     <p><b>Team size:</b> 3 </p>
@@ -336,24 +338,25 @@
                             <div class="item row">
                                 <div class="desc col-md-12 col-sm-12 col-xs-12">
                                     <h3 class="title">From Location to Product System</h3>
-                                    <p>The goal of this project is to rebuild a map platform that can apply in many delivery applications. </p>
+                                    <p>The goal of this project is to rebuild a map platform that can apply in many
+                                        delivery applications. </p>
                                     <p><b>What I did:</b></p>
-                                    <p> - Using WebSocket to transfer location messages from OpenStreetMap API to
+                                    <p> - Use WebSocket to transfer location messages from OpenStreetMap API to
                                         end-users or Traccar service.</p>
-                                    <p>- Providing a Next Word Prediction system for Address (Transformer - BERT model)
+                                    <p>- Provide a Next Word Prediction system for Address (Transformer - BERT model)
                                         used when
                                         searching or inputting billing addresses in
                                         delivery applications.</p>
-                                    <p>- Providing a Classification Address (Transformer - BERT model) used to separate
+                                    <p>- Provide a Classification Address (Transformer - BERT model) used to separate
                                         a long address
                                         into 4 levels DISTRICT, PROVINCE, WARD,
                                         and ADDRESS for locating process.</p>
-                                    <p>- Capturing data from profile service and billing service, then using pyspark to
+                                    <p>- Capture data from profile service and billing service, then using pyspark to
                                         store the changed data (which will be used for retraining task) back to Scylla
                                         (Cassandra).</p>
-                                    <p>- Using Flask Framework (Python) to provide a label tool that can help the
+                                    <p>- Use Flask Framework (Python) to provide a label tool that can help the
                                         evaluation and correction model</p>
-                                    <p>- Using Flask and Swagger to write a wrapper for serving model in production</p>
+                                    <p>- Use Flask and Swagger to write a wrapper for serving model in production</p>
                                     <p><b>Tech Stack:</b> Golang(Mux Framework), Python, Transformer - Bert Model,
                                         Hazelcast,
                                         PostgreSQL, Scylla Database - Ring Architure, Websocket, HTTP2, Kafka, Pandas,
@@ -373,12 +376,12 @@
                                         applications using this core system can be listed as chat applications (Quà Tặng
                                         Vip), notification systems (Bách Hóa Xanh), or location systems (Tận Tâm). </p>
                                     <p><b>What I did:</b></p>
-                                    <p>- Using WebSocket protocol to handle messages from end users</p>
-                                    <p> - Using Nats, Nats
+                                    <p>- Use WebSocket protocol to handle messages from end users</p>
+                                    <p> - Use Nats, Nats
                                         Streaming, Kafka as a message queue</p>
-                                    <p>- Using Hazelcast for caching common-used messages and profiles</p>
-                                    <p>- Using Postgres SQL to store customer profiles</p>
-                                    <p>- Using Elastic Search to store messages</p>
+                                    <p>- Use Hazelcast for caching common-used messages and profiles</p>
+                                    <p>- Use Postgres SQL to store customer profiles</p>
+                                    <p>- Use Elastic Search to store messages</p>
                                     <p><b>Team size:</b> 20 + </p>
                                     <p><b>Role:</b> Backend Devloper & Data Engineer</p>
                                     <p><b>Tech Stack:</b> Golang(Mux Framework), Nats, Nats Streaming, Jets Streaming,
@@ -399,17 +402,17 @@
                                     <p>
                                         <b>What I did:</b>
                                     </p>
-                                    <p>- Collecting and preprocessing the realtime metrics from sensors to the gateway
+                                    <p>- Collect and pre-process the realtime metrics from sensors to the gateway
                                         (running
                                         Linux core) by Python services and MQTT
                                         protocol.</p>
-                                    <p>- Using Apache Nifi, miNifi to synchronize data for offline devices.</p>
-                                    <p>- Using NodeJS (Express JS, Jest JS) for almost backend services such as profile
+                                    <p>- Use Apache Nifi, miNifi to synchronize data for offline devices.</p>
+                                    <p>- Use NodeJS (Express JS, Jest JS) for almost backend services such as profile
                                         service and IoT service.</p>
-                                    <p>- Storing customer profiles including personal information and device information
+                                    <p>- Store customer profiles including personal information and device information
                                         using Postgres SQL.</p>
-                                    <P>- Storing statuses of sensors, logging via RockDB and MongoDB.</P>
-                                    <p>- Using RabbitMQ to manage data pipelines, subscribers, and publishers
+                                    <P>- Store statuses of sensors, logging via RockDB and MongoDB.</P>
+                                    <p>- Use RabbitMQ to manage data pipelines, subscribers, and publishers
                                         from wireless devices.</p>
                                     <p>- Other tech stack: STM32, NodeMCU, Raspberry Pi, Ubuntu Service, Jenkins,
                                         BitBucket, TCP/UDP, Apache 2,... </p>
@@ -427,12 +430,11 @@
                                         based on RFID locator technology. </p>
                                     <b>What I did:</b>
                                     </p>
-                                    <p>- Working with Scrum/Agile model (managed by Trello)</p>
-                                    <p>- Writing a Node-JS backend service to collect the status of towels in the rental
-                                        process from the center storage to
-                                        other partners.</p>
-                                    <p>- Using Postgres SQL to store the towel detail data</p>
-                                    <p>- Using MongoDB to store the milestone status of towels in the whole rental
+                                    <p>- Work with Scrum/Agile model (managed by Trello)</p>
+                                    <p>- Build a Node-JS backend service to collect the status of towels in the rental
+                                        process from a center storage to other partners.</p>
+                                    <p>- Use Postgres SQL to store towel detail data</p>
+                                    <p>- Use MongoDB to store the milestone status of towels in the whole rental
                                         process.</p>
                                     <p><b>Team size:</b> 15 </p>
                                     <p><b>Role:</b> Backend Developer</p>
@@ -443,12 +445,12 @@
                                 <div class="desc col-md-12 col-sm-12 col-xs-12">
                                     <h3 class="title">Payment Service - Sandexcare Vietnam Company Limited</h3>
                                     <p><b>What I did:</b></p>
-                                    <p>- Using Golang as the main programing language to manage the status of
+                                    <p>- Use Golang as the main programing language to manage the status of
                                         transactions in the Payment service.</p>
-                                    <p>- Using CQRS Pattern to manage the read/write transaction process.</p>
-                                    <p>- Using IPN to manage the payment process from other partners such
+                                    <p>- Use CQRS Pattern to manage the read/write transaction process.</p>
+                                    <p>- Use IPN to manage the payment process from other partners such
                                         as OnePay, Momo, ZaloPay</p>
-                                    <p>- Using Google Cloud Platform for deployment process</p>
+                                    <p>- Use Google Cloud Platform for deployment process</p>
                                     <p><b>Tech Stack:</b>Golang, IPN, CQRS, GCP, Nginx, Jenkins, Gitlab, MongoDB, JWT,
                                         Kubernatives, Google Domain
                                     </p>
@@ -463,14 +465,14 @@
                                     <p><b>Description:</b></p>
                                     <p> In the meeting, the need for recognizing the personal information of partners is
                                         very important. This project used a
-                                        check-in photo of partners to find out their personal information already
-                                        existing in the system such as name, date of
-                                        birth, or company name.</p>
+                                        check-in photo of partners to look for their personal information already
+                                        existed in the system such as name, date of
+                                        birth or company name.</p>
                                     <p><b>What I did:</b></p>
-                                    <p> + Using OpenCV, Google Vision API, Android Studio to get features from image</p>
-                                    <p> + Using Struct Framework (Java), Postgres to crawl data from website and making
+                                    <p> + Use OpenCV, Google Vision API, Android Studio to get features from images.</p>
+                                    <p> + Use Struct Framework (Java), Postgres to crawl data from websites and build
                                         RespAPI for android application.</p>
-                                    <p> + Using SVN to manage source code and Amazone Services to deploye services</p>
+                                    <p> + Use SVN to manage source code and Amazone Services to deploy services</p>
                                     <p><b>Team size:</b> 3 </p>
                                     <p><b>Role:</b> Developer</p>
                                 </div><!--//desc-->
