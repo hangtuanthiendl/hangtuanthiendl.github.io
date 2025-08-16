@@ -1,0 +1,42 @@
+{
+  "name": "modern-portfolio",
+  "version": "1.0.0",
+  "description": "Modern portfolio website for Hang Tuan Thien - Senior Data Engineer & Backend Lead",
+  "main": "index.html",
+  "scripts": {
+    "start": "npx serve .",
+    "dev": "npx live-server --port=3000 --open=/modern/",
+    "build": "echo 'No build process needed for static site'",
+    "test": "echo 'Running accessibility and performance tests...'",
+    "deploy": "echo 'Deploy to GitHub Pages or your hosting provider'"
+  },
+  "keywords": [
+    "portfolio",
+    "data-engineer",
+    "backend-developer",
+    "resume",
+    "cv",
+    "responsive",
+    "modern"
+  ],
+  "author": {
+    "name": "Hang Tuan Thien",
+    "email": "me@thienhang.com",
+    "url": "https://www.thienhang.com"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/open-thienhang-com/hangtuanthiendl.github.io"
+  },
+  "homepage": "https://hangtuanthiendl.github.io",
+  "devDependencies": {
+    "live-server": "^1.2.2",
+    "serve": "^14.0.0"
+  },
+  "browserslist": [
+    "last 2 versions",
+    "> 1%",
+    "not dead"
+  ]
+}

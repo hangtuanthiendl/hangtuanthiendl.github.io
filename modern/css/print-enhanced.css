@@ -1,0 +1,691 @@
+/* Enhanced Print Layout Improvements for A4/A5 */
+
+/* A4/A5 Page Setup with improved margins */
+@page {
+    size: A4;
+    margin: 0.4in 0.5in;
+    font-family: 'Segoe UI', system-ui, sans-serif;
+}
+
+/* A5 Layout Support */
+@media print and (width: 5.8in) {
+    @page {
+        size: A5;
+        margin: 0.3in 0.4in;
+    }
+}
+
+/* Enhanced Print Styles with A4/A5 Support */
+@media print {
+    /* Force high-quality print rendering */
+    * {
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+        color-adjust: exact !important;
+    }
+    
+    /* Base print layout */
+    body {
+        font-size: 9.5pt !important;
+        color: #000 !important;
+        background: white !important;
+        line-height: 1.35 !important;
+        text-rendering: optimizeLegibility !important;
+        -webkit-font-smoothing: antialiased !important;
+    }
+    
+    /* Container adjustments */
+    .cv-container {
+        box-shadow: none !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        border: none !important;
+        background: white !important;
+        max-width: none !important;
+        width: 100% !important;
+        min-height: auto !important;
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 8pt !important;
+    }
+    
+    /* Header optimizations */
+    .cv-header {
+        background: linear-gradient(135deg, #86EFAC 0%, #BBF7D0 100%) !important;
+        padding: 14pt !important;
+        margin-bottom: 10pt !important;
+        page-break-inside: avoid !important;
+        border-radius: 6pt !important;
+        flex-shrink: 0 !important;
+    }
+    
+    /* Header content layout */
+    .header-content {
+        gap: 16pt !important;
+    }
+    
+    .profile-section {
+        gap: 16pt !important;
+    }
+    
+    .profile-image img {
+        width: 70pt !important;
+        height: 70pt !important;
+        border: 2pt solid white !important;
+    }
+    
+    /* Typography improvements */
+    .name {
+        font-size: 19pt !important;
+        color: #1e3a8a !important;
+        margin-bottom: 5pt !important;
+        line-height: 1.2 !important;
+        letter-spacing: 0.3pt !important;
+    }
+    
+    .title {
+        font-size: 11.5pt !important;
+        color: #1f2937 !important;
+        margin-bottom: 8pt !important;
+        font-weight: 500 !important;
+    }
+    
+    .section-title {
+        font-size: 10.5pt !important;
+        color: #1e3a8a !important;
+        margin-bottom: 6pt !important;
+        padding-bottom: 3pt !important;
+        page-break-after: avoid !important;
+        border-bottom: 1.5pt solid #86EFAC !important;
+        font-weight: 700 !important;
+    }
+    
+    .section-content {
+        font-size: 8.5pt !important;
+        color: #000 !important;
+        line-height: 1.4 !important;
+        hyphens: auto !important;
+    }
+    
+    /* Main content layout */
+    .cv-main {
+        flex: 1 !important;
+        margin-bottom: 8pt !important;
+    }
+    
+    .cv-columns {
+        grid-template-columns: 1fr 1.7fr !important;
+        gap: 16pt !important;
+        align-items: start !important;
+    }
+    
+    /* Section spacing */
+    .cv-section {
+        page-break-inside: avoid !important;
+        margin-bottom: 12pt !important;
+        orphans: 2 !important;
+        widows: 2 !important;
+    }
+    
+    .cv-section:last-child {
+        margin-bottom: 0 !important;
+    }
+    
+    /* Experience section optimization */
+    .experience-item {
+        page-break-inside: avoid !important;
+        break-inside: avoid !important;
+        margin-bottom: 10pt !important;
+        padding-bottom: 6pt !important;
+    }
+    
+    .experience-content {
+        padding: 8pt !important;
+        margin-bottom: 3pt !important;
+        background: #f8fafc !important;
+        border: 1px solid #e2e8f0 !important;
+        border-radius: 6px !important;
+    }
+    
+    .experience-content::before {
+        top: 14px !important;
+        border-right: 6px solid #f8fafc !important;
+        border-top: 5px solid transparent !important;
+        border-bottom: 5px solid transparent !important;
+    }
+    
+    .experience-header {
+        margin-bottom: 6pt !important;
+        padding-bottom: 4pt !important;
+        border-bottom: 1px solid #e2e8f0 !important;
+        page-break-after: avoid !important;
+    }
+    
+    .experience-header h3 {
+        font-size: 9.5pt !important;
+        color: #1e3a8a !important;
+        margin-bottom: 4pt !important;
+        line-height: 1.3 !important;
+    }
+    
+    .company-info {
+        gap: 12pt !important;
+        margin-top: 3pt !important;
+    }
+    
+    .company {
+        color: #1e3a8a !important;
+        font-size: 8.5pt !important;
+        font-weight: 500 !important;
+    }
+    
+    .period {
+        font-size: 7.5pt !important;
+        color: #4b5563 !important;
+    }
+    
+    .summary {
+        font-size: 8.5pt !important;
+        color: #374151 !important;
+        margin: 6pt 0 !important;
+        line-height: 1.4 !important;
+    }
+    
+    .achievement-item {
+        padding: 3pt !important;
+        margin-bottom: 2pt !important;
+        background: white !important;
+        border-radius: 3px !important;
+    }
+    
+    .achievement-item span {
+        font-size: 8pt !important;
+        color: #000 !important;
+        line-height: 1.35 !important;
+    }
+    
+    /* Timeline adjustments */
+    .experience-timeline {
+        padding-left: 18pt !important;
+    }
+    
+    .experience-timeline::before {
+        left: 10pt !important;
+        background: #86EFAC !important;
+        width: 1.5px !important;
+    }
+    
+    .experience-marker {
+        left: -18pt !important;
+        width: 16px !important;
+        height: 16px !important;
+        background: #86EFAC !important;
+        border: 2px solid white !important;
+        box-shadow: 0 0 0 2px #86EFAC !important;
+    }
+    
+    .experience-marker i {
+        font-size: 7px !important;
+    }
+    
+    /* Enhanced Skills Section with Optimized Spacing - Redesigned */
+    .skills-grid {
+        gap: 6pt !important;
+        grid-template-columns: 1fr 1fr !important; /* Only 2 columns for print */
+        margin-top: 6pt !important;
+        page-break-inside: avoid !important;
+    }
+    
+    .skill-category {
+        background: #f8fffe !important;
+        padding: 6pt !important;
+        border-radius: 4pt !important;
+        border: 0.8pt solid #d1fae5 !important;
+        page-break-inside: avoid !important;
+        margin-bottom: 4pt !important;
+    }
+    
+    .skill-category h3 {
+        font-size: 9pt !important;
+        color: #1e3a8a !important;
+        margin-bottom: 5pt !important;
+        font-weight: 600 !important;
+        display: flex !important;
+        align-items: center !important;
+        gap: 2pt !important;
+        border-bottom: 0.6pt solid #bbf7d0 !important;
+        padding-bottom: 2pt !important;
+    }
+    
+    .skill-category h3 i {
+        color: #059669 !important;
+        font-size: 8pt !important;
+    }
+    
+    .skill-items {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 3pt !important;
+    }
+    
+    .skill-item {
+        margin-bottom: 0 !important;
+        padding: 1pt 0 !important;
+        display: grid !important;
+        grid-template-columns: 1fr auto !important;
+        grid-template-rows: auto auto !important;
+        gap: 1pt !important;
+        align-items: center !important;
+    }
+    
+    .skill-name {
+        font-size: 7.5pt !important;
+        color: #1f2937 !important;
+        margin-bottom: 0 !important;
+        font-weight: 600 !important;
+        line-height: 1.2 !important;
+        grid-column: 1 !important;
+        grid-row: 1 !important;
+    }
+    
+    .skill-years {
+        font-size: 6pt !important;
+        color: white !important;
+        background: #059669 !important;
+        padding: 1pt 3pt !important;
+        border-radius: 6pt !important;
+        grid-column: 2 !important;
+        grid-row: 1 !important;
+        text-align: center !important;
+        font-weight: 500 !important;
+    }
+    
+    .skill-level {
+        background: #e5e7eb !important;
+        height: 4pt !important;
+        border-radius: 2pt !important;
+        overflow: hidden !important;
+        position: relative !important;
+        box-shadow: inset 0 0.5pt 1pt rgba(0,0,0,0.1) !important;
+        grid-column: 1 / -1 !important;
+        grid-row: 2 !important;
+        margin-top: 1pt !important;
+    }
+    
+    .skill-bar {
+        height: 100% !important;
+        background: linear-gradient(90deg, #86EFAC 0%, #22c55e 100%) !important;
+        border-radius: 2pt !important;
+        position: relative !important;
+        box-shadow: 0 0.5pt 2pt rgba(34, 197, 94, 0.3) !important;
+    }
+    
+    .skill-bar::after {
+        content: '' !important;
+        position: absolute !important;
+        top: 0 !important;
+        right: 0 !important;
+        width: 1pt !important;
+        height: 100% !important;
+        background: #059669 !important;
+        border-radius: 0 2pt 2pt 0 !important;
+    }
+    
+    /* Competencies Summary for Print */
+    .competencies-summary {
+        background: #f0fdf4 !important;
+        padding: 6pt !important;
+        border-radius: 6pt !important;
+        border: 1pt solid #86EFAC !important;
+        margin-top: 8pt !important;
+        page-break-inside: avoid !important;
+    }
+    
+    .competencies-summary h4 {
+        font-size: 8.5pt !important;
+        color: #1e3a8a !important;
+        margin-bottom: 5pt !important;
+        font-weight: 700 !important;
+        display: flex !important;
+        align-items: center !important;
+        gap: 2pt !important;
+    }
+    
+    .competencies-summary h4 i {
+        color: #059669 !important;
+        font-size: 8pt !important;
+    }
+    
+    .competencies-grid {
+        display: grid !important;
+        grid-template-columns: 1fr 1fr !important;
+        gap: 3pt !important;
+    }
+    
+    .competency-item {
+        display: flex !important;
+        align-items: center !important;
+        gap: 3pt !important;
+        padding: 2pt !important;
+        background: white !important;
+        border-radius: 3pt !important;
+        border: 0.5pt solid #d1fae5 !important;
+        font-size: 7pt !important;
+    }
+    
+    .competency-item i {
+        color: #059669 !important;
+        font-size: 7pt !important;
+        flex-shrink: 0 !important;
+        width: 8pt !important;
+        text-align: center !important;
+    }
+    
+    .competency-item span {
+        font-weight: 500 !important;
+        color: #1f2937 !important;
+        line-height: 1.2 !important;
+    }
+    
+    /* Tech stack styling */
+    .tech-stack {
+        background: #f0fdf4 !important;
+        color: #166534 !important;
+        border-left: 3px solid #86EFAC !important;
+        padding: 6pt !important;
+        margin-top: 6pt !important;
+        border-radius: 4px !important;
+    }
+    
+    .tech-stack strong {
+        font-size: 8.5pt !important;
+        margin-bottom: 4pt !important;
+    }
+    
+    .tech-tags {
+        gap: 3pt !important;
+    }
+    
+    .tech-tag {
+        background: #dcfce7 !important;
+        color: #166534 !important;
+        font-size: 7pt !important;
+        padding: 1.5pt 4pt !important;
+        border-radius: 3px !important;
+        font-weight: 500 !important;
+    }
+    
+    /* Education and other sections */
+    .education-item,
+    .cert-item,
+    .award-item,
+    .activity-item {
+        margin-bottom: 5pt !important;
+        padding: 3pt !important;
+    }
+    
+    .education-item h3 {
+        font-size: 8.5pt !important;
+        color: #1e3a8a !important;
+        margin-bottom: 2pt !important;
+    }
+    
+    .institution,
+    .cert-item,
+    .award-item strong,
+    .activity-item strong {
+        font-size: 8pt !important;
+        color: #000 !important;
+        font-weight: 500 !important;
+    }
+    
+    .period,
+    .cert-item span:not(strong),
+    .award-item .award-content,
+    .activity-item .activity-content {
+        font-size: 7.5pt !important;
+        color: #4b5563 !important;
+    }
+    
+    /* Contact info optimization */
+    .contact-item {
+        padding: 3pt !important;
+        margin-bottom: 2pt !important;
+        background: rgba(134, 239, 172, 0.15) !important;
+        font-size: 7.5pt !important;
+        border-radius: 3px !important;
+    }
+    
+    .contact-info {
+        gap: 4pt !important;
+    }
+    
+    /* QR code adjustments */
+    .qr-section {
+        padding: 8pt !important;
+    }
+    
+    .qr-section img {
+        width: 35pt !important;
+        height: 35pt !important;
+    }
+    
+    .qr-text {
+        font-size: 6pt !important;
+        margin-top: 3pt !important;
+    }
+    
+    /* Footer optimization */
+    .cv-footer {
+        margin-top: 10pt !important;
+        padding-top: 6pt !important;
+        border-top: 1px solid #e2e8f0 !important;
+        flex-shrink: 0 !important;
+    }
+    
+    .footer-content {
+        font-size: 6.5pt !important;
+        color: #6b7280 !important;
+        text-align: center !important;
+        line-height: 1.3 !important;
+    }
+    
+    .footer-note {
+        margin-bottom: 3pt !important;
+    }
+    
+    /* Awards and Activities lists */
+    .awards-list,
+    .activities-list,
+    .certifications-list {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 4pt !important;
+    }
+    
+    .award-item,
+    .activity-item,
+    .cert-item {
+        display: flex !important;
+        align-items: flex-start !important;
+        gap: 6pt !important;
+        padding: 3pt !important;
+        background: white !important;
+        border-radius: 3px !important;
+    }
+    
+    .award-item i,
+    .activity-item i,
+    .cert-item i {
+        color: #86EFAC !important;
+        font-size: 8pt !important;
+        margin-top: 1pt !important;
+        flex-shrink: 0 !important;
+    }
+}
+
+/* A5 Print Optimizations */
+@media print and (max-width: 6in) {
+    body {
+        font-size: 8pt !important;
+        line-height: 1.3 !important;
+    }
+    
+    .cv-columns {
+        grid-template-columns: 1fr !important;
+        gap: 8pt !important;
+    }
+    
+    .header-content {
+        flex-direction: column !important;
+        align-items: center !important;
+        text-align: center !important;
+        gap: 10pt !important;
+    }
+    
+    .profile-section {
+        flex-direction: column !important;
+        align-items: center !important;
+        gap: 8pt !important;
+        min-width: auto !important;
+    }
+    
+    .contact-info {
+        grid-template-columns: 1fr !important;
+        gap: 3pt !important;
+    }
+    
+    .skills-grid {
+        grid-template-columns: 1fr !important; /* Single column for A5 */
+        gap: 4pt !important;
+        margin-top: 3pt !important;
+    }
+    
+    .skill-category {
+        padding: 4pt !important;
+        margin-bottom: 3pt !important;
+        background: #f8fffe !important;
+        border: 0.5pt solid #d1fae5 !important;
+    }
+    
+    .skill-category h3 {
+        font-size: 7.5pt !important;
+        margin-bottom: 3pt !important;
+        padding-bottom: 1pt !important;
+        border-bottom: 0.5pt solid #bbf7d0 !important;
+        gap: 1pt !important;
+    }
+    
+    .skill-category h3 i {
+        font-size: 7pt !important;
+    }
+    
+    .skill-items {
+        gap: 2pt !important;
+    }
+    
+    .skill-item {
+        padding: 0.5pt 0 !important;
+        gap: 0.5pt !important;
+    }
+    
+    .skill-name {
+        font-size: 6.5pt !important;
+        font-weight: 600 !important;
+    }
+    
+    .skill-years {
+        font-size: 5pt !important;
+        padding: 0.5pt 2pt !important;
+        border-radius: 3pt !important;
+    }
+    
+    .skill-level {
+        height: 3pt !important;
+        margin-top: 0.5pt !important;
+    }
+    
+    .skill-bar::after {
+        width: 0.5pt !important;
+    }
+    
+    /* Competencies for A5 */
+    .competencies-summary {
+        padding: 4pt !important;
+        margin-top: 5pt !important;
+    }
+    
+    .competencies-summary h4 {
+        font-size: 7pt !important;
+        margin-bottom: 3pt !important;
+    }
+    
+    .competencies-grid {
+        grid-template-columns: 1fr !important;
+        gap: 2pt !important;
+    }
+    
+    .competency-item {
+        padding: 1pt !important;
+        gap: 2pt !important;
+        font-size: 6pt !important;
+    }
+    
+    .competency-item i {
+        font-size: 6pt !important;
+        width: 6pt !important;
+    }
+    
+    .experience-timeline {
+        padding-left: 14pt !important;
+    }
+    
+    .experience-timeline::before {
+        left: 8pt !important;
+    }
+    
+    .experience-marker {
+        left: -14pt !important;
+        width: 12px !important;
+        height: 12px !important;
+    }
+    
+    .name {
+        font-size: 16pt !important;
+    }
+    
+    .title {
+        font-size: 10pt !important;
+    }
+    
+    .section-title {
+        font-size: 9pt !important;
+    }
+    
+    .section-content {
+        font-size: 7.5pt !important;
+    }
+    
+    .cv-header {
+        padding: 10pt !important;
+        margin-bottom: 8pt !important;
+    }
+    
+    .profile-image img {
+        width: 50pt !important;
+        height: 50pt !important;
+    }
+    
+    .cv-section {
+        margin-bottom: 8pt !important;
+    }
+    
+    .experience-content {
+        padding: 6pt !important;
+    }
+    
+    .tech-stack {
+        padding: 4pt !important;
+        margin-top: 4pt !important;
+    }
+}
