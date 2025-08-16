@@ -109,29 +109,29 @@ function showMainContent() {
 // Enhanced Theme Toggle
 function initThemeToggle() {
     const themeToggle = document.getElementById('themeToggle');
-    const body = document.body;
+    const html = document.documentElement;
     
     // Load saved theme
     const savedTheme = localStorage.getItem('theme') || 'light';
-    body.setAttribute('data-theme', savedTheme);
+    html.setAttribute('data-theme', savedTheme);
     updateThemeIcon(savedTheme);
     
     if (themeToggle) {
         themeToggle.addEventListener('click', () => {
-            const currentTheme = body.getAttribute('data-theme');
+            const currentTheme = html.getAttribute('data-theme');
             const newTheme = currentTheme === 'light' ? 'dark' : 'light';
             
             // Add transition class
-            body.classList.add('theme-transition');
+            html.classList.add('theme-transition');
             
             // Update theme
-            body.setAttribute('data-theme', newTheme);
+            html.setAttribute('data-theme', newTheme);
             localStorage.setItem('theme', newTheme);
             updateThemeIcon(newTheme);
             
             // Remove transition class
             setTimeout(() => {
-                body.classList.remove('theme-transition');
+                html.classList.remove('theme-transition');
             }, 300);
         });
     }
@@ -140,13 +140,12 @@ function initThemeToggle() {
 function updateThemeIcon(theme) {
     const lightIcon = document.querySelector('.theme-icon.light');
     const darkIcon = document.querySelector('.theme-icon.dark');
-    
     if (theme === 'dark') {
-        lightIcon?.style.setProperty('display', 'block');
-        darkIcon?.style.setProperty('display', 'none');
+        lightIcon?.style.setProperty('opacity', '0');
+        darkIcon?.style.setProperty('opacity', '1');
     } else {
-        lightIcon?.style.setProperty('display', 'none');
-        darkIcon?.style.setProperty('display', 'block');
+        lightIcon?.style.setProperty('opacity', '1');
+        darkIcon?.style.setProperty('opacity', '0');
     }
 }
 
@@ -273,7 +272,7 @@ function initAnimations() {
     });
 }
 
-// ...existing code...
+// Navigation functionality
 function initNavigation() {
     const nav = document.querySelector('.nav');
     const navToggle = document.getElementById('nav-toggle');
@@ -348,34 +347,6 @@ function initNavigation() {
             }
         });
     });
-}
-
-// Theme toggle functionality
-function initThemeToggle() {
-    const themeToggle = document.getElementById('theme-toggle');
-    const body = document.body;
-    
-    // Check for saved theme preference
-    const savedTheme = localStorage.getItem('theme');
-    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    
-    // Set initial theme
-    if (savedTheme) {
-        body.setAttribute('data-theme', savedTheme);
-    } else if (prefersDark) {
-        body.setAttribute('data-theme', 'dark');
-    }
-    
-    // Theme toggle event
-    if (themeToggle) {
-        themeToggle.addEventListener('click', () => {
-            const currentTheme = body.getAttribute('data-theme');
-            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-            
-            body.setAttribute('data-theme', newTheme);
-            localStorage.setItem('theme', newTheme);
-        });
-    }
 }
 
 // Typing effect for hero section
